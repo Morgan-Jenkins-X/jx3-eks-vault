@@ -4,16 +4,24 @@ spec:
   autoUpdate:
     enabled: false
     schedule: ""
-  cluster:
+    cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    # clusterName: automation-mgmt-eks
     devEnvApprovers:
-    - todo
-    environmentGitOwner: todo
+    - jenkinsxbotmo
+    environmentGitOwner: Morgan-Jenkins-X
+    environmentGitPublic: true
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    project: "339337551661"
     provider: eks
+    region: us-east-2
+    registry: 339337551661.dkr.ecr.us-east-2.amazonaws.com
   environments:
   - key: dev
+    # owner: Morgan-Jenkins-X
+    # repository: jx-cluster-repo
   - key: staging
   - key: production
   ingress:
