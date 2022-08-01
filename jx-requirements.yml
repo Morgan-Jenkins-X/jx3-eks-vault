@@ -6,7 +6,7 @@ spec:
     schedule: ""
     cluster:
     chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
-    # clusterName: automation-mgmt-eks
+    clusterName: automation-mgmt-eks
     devEnvApprovers:
     - jenkinsxbotmo
     environmentGitOwner: Morgan-Jenkins-X
@@ -20,8 +20,8 @@ spec:
     registry: 339337551661.dkr.ecr.us-east-2.amazonaws.com
   environments:
   - key: dev
-    # owner: Morgan-Jenkins-X
-    # repository: jx-cluster-repo
+    owner: Morgan-Jenkins-X
+    repository: automation-mgmt-eks
   - key: staging
   - key: production
   ingress:
