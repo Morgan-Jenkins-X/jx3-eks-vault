@@ -4,13 +4,10 @@ spec:
   autoUpdate:
     enabled: false
     schedule: ""
-    cluster:
+  cluster:
     chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
-    # clusterName: automation-mgmt-eks
-    devEnvApprovers:
-    - jenkinsxbotmo
+    clusterName: automation-mgmt-eks
     environmentGitOwner: Morgan-Jenkins-X
-    environmentGitPublic: true
     gitKind: github
     gitName: github
     gitServer: https://github.com
@@ -20,19 +17,29 @@ spec:
     registry: 339337551661.dkr.ecr.us-east-2.amazonaws.com
   environments:
   - key: dev
-    # owner: Morgan-Jenkins-X
-    # repository: jx-cluster-repo
+    owner: Morgan-Jenkins-X
+    repository: jx3-eks-vault
   - key: staging
   - key: production
   ingress:
     domain: ""
-    externalDNS: false
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: jenkinsxbotmo
   repository: nexus
   secretStorage: vault
+  storage:
+  - name: logs
+    url: s3://logs-automation-mgmt-eks-20220801154636498400000006
+  - name: reports
+    url: s3://reports-automation-mgmt-eks-20220801154636484800000003
+  - name: repository
+    url: s3://repository-automation-mgmt-eks-20220801154636489300000004
+  terraform: true
   vault: {}
   webhook: lighthouse
