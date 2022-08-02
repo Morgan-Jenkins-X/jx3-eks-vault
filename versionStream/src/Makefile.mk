@@ -33,9 +33,9 @@ REPOSITORY_RESOLVE ?= repository-resolve
 GITOPS_WEBHOOK_UPDATE ?= gitops-webhook-update
 
 # these values are only required for vault - you can ignore if you are using a cloud secret store
-VAULT_ADDR ?= https://vault.jx-vault:8200
-VAULT_NAMESPACE ?= jx-vault
-VAULT_ROLE ?= jx-vault
+# VAULT_ADDR ?= https://vault.jx-vault:8200
+# VAULT_NAMESPACE ?= jx-vault
+# VAULT_ROLE ?= jx-vault
 VAULT_MOUNT_POINT ?= kubernetes
 EXTERNAL_VAULT ?= true
 
