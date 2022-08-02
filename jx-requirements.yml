@@ -32,14 +32,21 @@ spec:
   pipelineUser:
     username: jenkinsxbotmo
   repository: nexus
-  secretStorage: secretsManager
-  # storage:
-  # - name: logs
-  #   url: s3://logs-automation-mgmt-eks-20220801214725586400000003
-  # - name: reports
-  #   url: s3://reports-automation-mgmt-eks-20220801214725593100000005
-  # - name: repository
-  #   url: s3://repository-automation-mgmt-eks-20220801214725593400000006
+  secretStorage: vault
+  storage:
+  - name: logs
+    url: s3://logs-automation-mgmt-eks-20220802211323229900000001
+  - name: reports
+    url: s3://reports-automation-mgmt-eks-20220802211323249800000002
+  - name: repository
+    url: s3://repository-automation-mgmt-eks-20220802211323316600000005
   terraform: true
-  vault: {}
+  vault:
+    aws:
+      dynamoDBRegion: us-east-2
+      dynamoDBTable: vault-unseal-automation-mgmt-eks-oEiP3NFT
+      kmsKeyId: d2a33c9c-c409-4fe7-b444-c0968deb90a4
+      kmsRegion: us-east-2
+      s3Bucket: vault-unseal-automation-mgmt-eks-20220802211323254800000003
+      s3Region: us-east-2
   webhook: lighthouse
