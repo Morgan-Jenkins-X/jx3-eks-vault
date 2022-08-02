@@ -37,7 +37,7 @@ VAULT_ADDR ?= https://vault.jx-vault:8200
 VAULT_NAMESPACE ?= jx-vault
 VAULT_ROLE ?= jx-vault
 VAULT_MOUNT_POINT ?= kubernetes
-EXTERNAL_VAULT ?= false
+EXTERNAL_VAULT ?= true
 
 GIT_SHA ?= $(shell git rev-parse HEAD)
 
